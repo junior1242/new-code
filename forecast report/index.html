@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.4.2/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+    <title>ForeCast Report</title>
+</head>
+<body>
+    <div class="container">
+        <div class="items item1">
+            <div class="sportpet">
+                <img src="../sportpet.png" alt="logo">
+            </div>
+            <div class="navigation">
+                        <nav>Shipping</nav>
+                <nav>
+                    <a href="../inverntory/index.html">Inventory</a>
+                </nav>
+                <nav>Customer Service</nav>
+                <nav>Administration</nav>
+                <div class="profile-container">
+                    <div class="profile-icon" id="profileIcon">
+                        <i class="fi fi-rr-circle-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="items item2">
+            <div class="heading">
+                <img header src="../heading.jpg" alt="image">
+                <h1 class="overflow_text">Inventory</h1>
+            </div>
+        </div>
+
+        <div class="items item3">
+            <div class="intro">
+                <h1>FORECAST REPORT </h1>
+                <span>| Item Forecast By Catagory</span>
+            </div>
+        </div>
+        <hr id="first_hr">
+        <div class="items item4">
+            <div class="select items1">
+                <span>Year</span>
+                <select name="Year" id="Year">
+                    <option value="select">select</option>
+                </select>
+            </div>
+            <div class="select items2">
+                <span>Brand</span>
+                <select name="Item Number" id="ItemNumber">
+                    <option value="select" selected>select</option>
+                </select>
+            </div>
+            <div class="select items3">
+            <span>Catagory</span>
+            <select name="Item Number" id="ItemNumber">
+                <option value="select" selected>select</option>
+            </select>
+            </div>
+        </div>
+        <hr>
+        <div class="items item5">
+            <div class="div1">
+                <span>ItemNumber</span>
+                <select name="Item Number" id="ItemNumber">
+                    <option value="select" selected>select</option>
+                </select>
+            </div>
+            <div class="div2">
+                <button>Previous</butotn>
+                <button class="next_btn">Next</butotn>
+            </div>
+        </div>
+        <div class="items item6">
+            <div class="detail">
+                <h1>Michael Chambary Collar Small</h1>
+                <button>Download SpreadSheet</button>
+            </div>
+        </div>
+        <div class="items item7">
+            <div class="table_data">
+                <table>
+                    <tr>
+                        <th>Item#</th>
+                        <th>Year</th>
+                        <th>Week</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>On Hand TOtal</th>
+                        <th>Order[order sum +alloc +open]</th>
+                        <th>Unconfirm</th>
+                        <th>Confirm</th>
+                        <th>On Water</th>
+                        <th>Total Stock</th>
+                        <th>Forecast</th>
+                        <th>Net QTY</th>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>Week1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <hr class="hr_last">
+    <div class="items item8">
+        <div class="foot_img">
+            <img src="../foot.png" alt="footimg">
+        </div>
+        <div class="nav_bar">
+            <nav>Shipping</nav>
+            <nav>
+                <a href="../inverntory/index.html">
+                Inventory
+                </a>
+                </nav>
+            <nav>Customer Service</nav>
+            <nav>Administration</nav>
+            <i class="fi fi-rr-circle-user"></i>
+        </div>
+        <div class="copyright">
+            <pre>Terms&Condtions  |  Privacy Policy   Copyright SportPet Designs 2023</pre>
+        </div>
+    </div>
+    <hr class="hr_last">
+    </div>
+</body>
+    <script>
+        document.getElementById('profileIcon').addEventListener('click', function () {
+            
+            let existingDropdown = document.querySelector('.dropdown-list');
+            if (existingDropdown) {
+                existingDropdown.style.display = existingDropdown.style.display === 'block' ? 'none' : 'block';
+                return;
+            }
+
+            let dropdownList = document.createElement('ul');
+            dropdownList.classList.add('dropdown-list');
+
+            let items = ['Account Information', 'Change Password', 'Logout'];
+            items.forEach(item => {
+                let li = document.createElement('li');
+                let a = document.createElement('a');
+                a.href = '#' + item.toLowerCase();
+                a.textContent = item;
+                li.appendChild(a);
+                dropdownList.appendChild(li);
+            });
+            document.querySelector('.profile-container').appendChild(dropdownList);
+            dropdownList.style.display = 'block';
+        });
+
+        document.addEventListener('click', function (event) {
+            let profileIcon = document.getElementById('profileIcon');
+            let dropdownList = document.querySelector('.dropdown-list');
+            if (dropdownList && !profileIcon.contains(event.target) && !dropdownList.contains(event.target)) {
+                dropdownList.style.display = 'none';
+            }
+        });
+    </script>
+</html>
+
+
+
+
+
